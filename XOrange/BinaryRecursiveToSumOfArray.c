@@ -1,7 +1,3 @@
-/*
-    二分递归，数组求和
- */
-
 #include <stdio.h>
 
 int sum(int *A, int lo, int hi) {
