@@ -1,0 +1,71 @@
+
+/*
+这是我仿照接口与实现章节写的关于两个数组之间的copy的代码，由于对C++向量暂时
+不是十分清楚，重写的Victor类报错了，我回去之后在查一下资料，这里先利用数组之
+间的复制，代替向量之间的复制，写一段代码，之后，对向量有了新的认识后我再写完善
+一下。
+*/
+
+
+#include <iostream>
+
+using namespace std;
+
+//typedef int Rank;
+
+int copyfrom(int *pa, int *pb, int lo, int hi);
+
+//#define DEFAULT_CAPACITY 3//默认初始容量
+
+
+int main()
+{
+    int a[6] = {1, 2, 3, 4, 5, 6};
+    int b[6];
+    int _size = copyfrom(a, b, 2, 5);
+    for (int i = 0; i < _size; i++)
+    {
+        cout << b[i] << endl;
+    }
+    return 0;
+}
+
+//template <typename T> class vector1{
+//    private Rank _size;//规模
+//    private int _capacity;//容量
+//    private T* _elem;//数据区
+//
+//    //构造
+//    vector1(int c = DEFAULT_CAPACITY)//默认
+//    {
+//        _elem = new T[_capacity];
+//    }
+//
+//    vector1(T const *A, Rank lo, Rank hi)//数组区间复制
+//    {
+//        copyfrom(A, lo, hi);
+//    }
+//    vector1(vector1<T> const &V, Rank lo, Rank hi)//向量区间复制
+//    {
+//        copyfrom(V._elem, lo, hi);
+//    }
+//    vector1(vector1<T> const &T)//向量整体复制
+//    {
+//        copyfrom (V._elem, lo, V.size)
+//    }
+//    //析构
+//    ~vector1()//释放内存空间
+//    {
+//        delete [] _elem;
+//    }
+//}
+
+int copyfrom(int *pa, int *pb, int lo, int hi)
+{
+    int _size = 0;
+    while(lo < hi)
+    {
+        pb[_size++] = pa[lo++];
+    }
+    return _size;
+}
