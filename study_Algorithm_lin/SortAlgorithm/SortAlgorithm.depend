@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1464330873 source:d:\clover\c\sortalgorithm\main.c
+	<stdio.h>
+	<stdlib.h>
+
